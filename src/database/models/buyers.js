@@ -1,7 +1,7 @@
 const { NOW } = require("sequelize");
 
 module.exports = (sequelize, DataTypes) => {
-    const User = sequelize.define("User",
+    const Buyer = sequelize.define("buyers",
     {
       id: {
         primaryKey: true,
@@ -96,7 +96,7 @@ module.exports = (sequelize, DataTypes) => {
         defaultValue: NOW(),
       },
       cnpjId: {
-        type: DataTypes.INTEGER(11),
+        type: DataTypes.INTEGER,
         allowNull: false,
       },
       confirm: {
@@ -104,12 +104,12 @@ module.exports = (sequelize, DataTypes) => {
         defaultValue: 1,
       },
       email: {
-        type: DataTypes.STRING(255),
+        type: DataTypes.STRING,
         defaultValue: null,
       }
     },
     { timestamps: false }
     );
   
-    return User;
+    return Buyer;
 };

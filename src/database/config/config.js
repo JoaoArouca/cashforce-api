@@ -2,7 +2,7 @@ module.exports = {
   development: {
       username: "root",
       password: "password",
-      database: "Cashforce-db",
+      database: "Cashforce",
       host: "127.0.0.1",
       port: 3306,
       dialect: "mysql",
@@ -11,7 +11,7 @@ module.exports = {
   test: {
       username: "root",
       password: "password",
-      database: "Cashforce-db",
+      database: "Cashforce",
       host: "127.0.0.1",
       port: 3306,
       dialect: "mysql",
@@ -20,7 +20,7 @@ module.exports = {
   production: {
       username: "root",
       password: "password",
-      database: "Cashforce-db",
+      database: "Cashforce",
       host: "127.0.0.1",
       port: 3306,
       dialect: "mysql",
