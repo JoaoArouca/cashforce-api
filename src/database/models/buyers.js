@@ -1,5 +1,3 @@
-const { NOW } = require("sequelize");
-
 module.exports = (sequelize, DataTypes) => {
     const Buyer = sequelize.define("buyers",
     {
@@ -86,21 +84,21 @@ module.exports = (sequelize, DataTypes) => {
         defaultValue: null,
       },
       createdAt: {
-        type: DataTypes.DATETIME,
+        type: DataTypes.DATE,
         allowNull: false,
-        defaultValue: NOW(),
+        defaultValue: DataTypes.NOW,
       },
       updatedAt: {
         type: DataTypes.DATE,
         allowNull: false,
-        defaultValue: NOW(),
+        defaultValue: DataTypes.NOW,
       },
       cnpjId: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
       confirm: {
-        type: DataTypes.TINYINT(1),
+        type: DataTypes.TINYINT,
         defaultValue: 1,
       },
       email: {

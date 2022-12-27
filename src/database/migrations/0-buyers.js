@@ -1,7 +1,5 @@
 'use strict';
 
-const { NOW } = require('sequelize');
-
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
@@ -89,14 +87,14 @@ module.exports = {
         defaultValue: null,
       },
       createdAt: {
-        type: Sequelize.DATE,
+        type: Sequelize.DATEONLY,
         allowNull: false,
-        defaultValue: NOW(),
+        defaultValue: Sequelize.NOW,
       },
       updatedAt: {
-        type: Sequelize.DATE,
+        type: Sequelize.DATEONLY,
         allowNull: false,
-        defaultValue: NOW(),
+        defaultValue: Sequelize.NOW,
       },
       cnpjId: {
         type: Sequelize.INTEGER(11),

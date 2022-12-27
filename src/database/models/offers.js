@@ -30,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       expiresIn: {
-        type: DataTypes.DATETIME,
+        type: DataTypes.DATE,
         allowNull: false,
       },
       paymentStatusSponsor: {
@@ -42,12 +42,12 @@ module.exports = (sequelize, DataTypes) => {
         defaultValue: 0,
       },
       createdAt: {
-        type: DataTypes.DATETIME,
+        type: DataTypes.DATE,
         allowNull: false,
         defaultValue: NOW(),
       },
       updatedAt: {
-        type: DataTypes.DATETIME,
+        type: DataTypes.DATE,
         allowNull: false,
         defaultValue: NOW(),
       },

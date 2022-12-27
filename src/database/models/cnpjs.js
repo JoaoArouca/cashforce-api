@@ -1,5 +1,3 @@
-const { NOW } = require("sequelize");
-
 module.exports = (sequelize, DataTypes) => {
     const CNPJ = sequelize.define("cnpjs",
     {
@@ -18,14 +16,14 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       createdAt: {
-        type: DataTypes.DATETIME,
+        type: DataTypes.DATE,
         allowNull: false,
-        defaultValue: NOW(),
+        defaultValue: DataTypes.NOW,
       },
       updatedAt: {
         type: DataTypes.DATE,
         allowNull: false,
-        defaultValue: NOW(),
+        defaultValue: DataTypes.NOW,
       }
     },
     { timestamps: false }

@@ -1,29 +1,18 @@
+const options = {
+  host: 'localhost',
+  port: '3306',
+  database: 'Cashforce',
+  username: 'root',
+  password: 'password',
+  dialect: 'mysql',
+  dialectOptions: {
+    timezone: 'Z',
+  },
+  logging: process.env.DEBUG !== 'false',
+};
+
 module.exports = {
   development: {
-      username: "root",
-      password: "password",
-      database: "Cashforce",
-      host: "127.0.0.1",
-      port: 3306,
-      dialect: "mysql",
-      logging: true
-  },
-  test: {
-      username: "root",
-      password: "password",
-      database: "Cashforce",
-      host: "127.0.0.1",
-      port: 3306,
-      dialect: "mysql",
-      logging: true
-  },
-  production: {
-      username: "root",
-      password: "password",
-      database: "Cashforce",
-      host: "127.0.0.1",
-      port: 3306,
-      dialect: "mysql",
-      logging: true
+    ...options,
   }
 };

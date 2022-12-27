@@ -26,12 +26,12 @@ module.exports = (sequelize, DataTypes) => {
         defaultValue: 1,
       },
       createdAt: {
-        type: DataTypes.DATETIME,
+        type: DataTypes.DATE,
         allowNull: false,
         defaultValue: NOW(),
       },
       updatedAt: {
-        type: DataTypes.DATETIME,
+        type: DataTypes.DATE,
         allowNull: false,
         defaultValue: NOW(),
       },
