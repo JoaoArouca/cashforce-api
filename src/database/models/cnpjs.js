@@ -26,8 +26,15 @@ module.exports = (sequelize, DataTypes) => {
         defaultValue: DataTypes.NOW,
       }
     },
-    { timestamps: false }
-    );
+    {
+      timestamps: false, tableName: 'cnpjs'
+    });
+
+    CNPJ.associate = (models) => {
+      CNPJ.hasMany(models.Order, {
+        foreignKey: 'cnpjid', as: 'cnpj',
+      })
+    }
   
     return CNPJ;
 };
