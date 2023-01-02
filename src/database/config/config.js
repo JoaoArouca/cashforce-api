@@ -1,9 +1,11 @@
+require('dotenv').config();
+
 const options = {
-  host: 'localhost',
-  port: '3306',
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT,
   database: 'Cashforce',
-  username: 'root',
-  password: 'password',
+  username: process.env.DB_USER,
+  password: process.env.DB_PASS,
   dialect: 'mysql',
   dialectOptions: {
     timezone: 'Z',
