@@ -2,7 +2,6 @@
 
 const { NOW } = require('sequelize');
 
-/** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
     await queryInterface.createTable('cnpjs', {
@@ -13,11 +12,11 @@ module.exports = {
         autoIncrement: true
       },
       cnpj: {
-        type: Sequelize.STRING(255),
+        type: Sequelize.STRING,
         allowNull: false,
       },
       companyType: {
-        type: Sequelize.STRING(255),
+        type: Sequelize.STRING,
         allowNull: false,
       },
       createdAt: {
