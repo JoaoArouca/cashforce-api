@@ -37,12 +37,12 @@ module.exports = {
         allowNull: false,
       },
       paymentStatusSponsor: {
-        type: Sequelize.TINYINT(1),
-        defaultValue: 0,
+        type: Sequelize.BOOLEAN,
+        defaultValue: false,
       },
       paymentStatusProvider: {
-        type: Sequelize.TINYINT(1),
-        defaultValue: 0,
+        type: Sequelize.BOOLEAN,
+        defaultValue: false,
       },
       createdAt: {
         type: Sequelize.DATE,

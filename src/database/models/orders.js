@@ -2,7 +2,7 @@ const { NOW } = require("sequelize");
 
 module.exports = (sequelize, DataTypes) => {
   const Order = sequelize.define(
-    "orders",
+    "Order",
     {
       id: {
         type: DataTypes.INTEGER,
@@ -67,18 +67,42 @@ module.exports = (sequelize, DataTypes) => {
       cnpjId: {
         type: DataTypes.INTEGER,
         defaultValue: null,
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL',
+        references: {
+          model: 'cnpjs',
+          key: 'id',
+        }
       },
       userId: {
         type: DataTypes.INTEGER,
         defaultValue: null,
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL',
+        references: {
+          model: 'users',
+          key: 'id',
+        },
       },
       buyerId: {
         type: DataTypes.INTEGER,
         defaultValue: null,
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL',
+        references: {
+          model: 'buyers',
+          key: 'id',
+        },
       },
       providerId: {
         type: DataTypes.INTEGER,
         defaultValue: null,
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL',
+        references: {
+          model: 'providers',
+          key: 'id',
+        },
       },
       orderStatusBuyer: {
         type: DataTypes.STRING,
@@ -101,8 +125,26 @@ module.exports = (sequelize, DataTypes) => {
         defaultValue: null,
       },
     },
-    { timestamps: false }
+    { timestamps: true, tableName: 'orders' }
   );
+
+  Order.associate = (models) => {
+    Order.belongsTo(models.CNPJ, { 
+      foreignKey: 'cnpjid', as: 'cnpj',
+    });
+
+    Order.belongsTo(models.User, { 
+      foreignKey: 'userid', as: 'user',
+    });
+
+    Order.belongsTo(models.Buyer, { 
+      foreignKey: 'buyerid', as: 'buyer',
+    });
+
+    Order.belongsTo(models.Provider, { 
+      foreignKey: 'providerid', as: 'provider',
+    });
+  };
 
   return Order;
 };

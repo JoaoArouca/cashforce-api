@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
     {
-      timestamps: false, tableName: 'cnpjs'
+      timestamps: true, tableName: 'cnpjs'
     });
 
     CNPJ.associate = (models) => {

@@ -1,7 +1,7 @@
 const { NOW } = require("sequelize");
 
 module.exports = (sequelize, DataTypes) => {
-    const Provider = sequelize.define("providers",
+    const Provider = sequelize.define("Provider",
     {
       id: {
         primaryKey: true,
@@ -113,15 +113,31 @@ module.exports = (sequelize, DataTypes) => {
       },
       cnpjId: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        defaultValue: null,
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL',
+        references: {
+          model: 'cnpjs',
+          key: 'id',
+    },
       },
       email: {
         type: DataTypes.STRING,
         defaultValue: null,
       }
     },
-    { timestamps: false }
+    { timestamps: true, tableName: 'providers' }
     );
+
+    Provider.associate = models => {
+      Provider.hasMany(models.Order, {
+        foreignKey: 'providerid', as: 'provider'
+      });
+
+      Provider.belongsTo(models.CNPJ, {
+        foreignKey: 'cnpjid', as: 'cnpj'
+      });
+    };
   
     return Provider;
 };

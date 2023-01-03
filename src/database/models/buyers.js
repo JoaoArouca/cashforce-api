@@ -95,19 +95,35 @@ module.exports = (sequelize, DataTypes) => {
       },
       cnpjId: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        defaultValue: null,
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL',
+        references: {
+          model: 'cnpjs',
+          key: 'id',
+    },
       },
       confirm: {
-        type: DataTypes.TINYINT,
-        defaultValue: 1,
+        type: DataTypes.BOOLEAN,
+        defaultValue: true,
       },
       email: {
         type: DataTypes.STRING,
         defaultValue: null,
       }
     },
-    { timestamps: false }
+    { timestamps: true, tableName: 'buyers', }
     );
   
+    Buyer.associate = (models) => {
+      Buyer.hasMany(models.Order, {
+        foreignKey: 'buyerid', as: 'buyer'
+      });
+
+      Buyer.belongsTo(models.CNPJ, {
+        foreignKey: 'cnpjId', as: 'cnpj'
+      });
+    }
+
     return Buyer;
 };

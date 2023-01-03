@@ -1,7 +1,7 @@
 const { NOW } = require("sequelize");
 
 module.exports = (sequelize, DataTypes) => {
-    const Offer = sequelize.define("offers",
+    const Offer = sequelize.define("Offer",
     {
       id: {
         primaryKey: true,
@@ -34,12 +34,12 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       paymentStatusSponsor: {
-        type: DataTypes.TINYINT,
-        defaultValue: 0,
+        type: DataTypes.BOOLEAN,
+        defaultValue: false,
       },
       paymentStatusProvider: {
-        type: DataTypes.TINYINT,
-        defaultValue: 0,
+        type: DataTypes.BOOLEAN,
+        defaultValue: false,
       },
       createdAt: {
         type: DataTypes.DATE,
@@ -54,13 +54,25 @@ module.exports = (sequelize, DataTypes) => {
       orderId: {
         type: DataTypes.INTEGER,
         defaultValue: null,
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL',
+        references: {
+          model: 'orders',
+          key: 'id',
+        },
       },
       sponsorId: {
         type: DataTypes.INTEGER,
         defaultValue: null,
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL',
+        references: {
+          model: 'sponsors',
+          key: 'id',
+          }
       }
     },
-    { timestamps: false }
+    { timestamps: true, tableName: 'offers' }
     );
   
     return Offer;

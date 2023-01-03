@@ -22,8 +22,8 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       availableToMarket: {
-        type: DataTypes.TINYINT,
-        defaultValue: 1,
+        type: DataTypes.BOOLEAN,
+        defaultValue: true,
       },
       createdAt: {
         type: DataTypes.DATE,
@@ -38,10 +38,22 @@ module.exports = (sequelize, DataTypes) => {
       orderId: {
         type: DataTypes.INTEGER,
         defaultValue: null,
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL',
+        references: {
+          model: 'orders',
+          key: 'id',
+        },
       }
     },
-    { timestamps: false }
+    { timestamps: false, tableName: 'orderportions' }
     );
   
+    Orderportions.associate = (models) => {
+      Orderportions.belongsTo(models.CNPJ, {
+        foreignKey: 'cnpjId', as: 'cnpj'
+      })
+    }
+
     return Orderportions;
 };

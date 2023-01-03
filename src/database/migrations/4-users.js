@@ -37,8 +37,8 @@ module.exports = {
         defaultValue: null,
       },
       emailChecked: {
-        type: Sequelize.TINYINT(1),
-        defaultValue: 0,
+        type: Sequelize.BOOLEAN,
+        defaultValue: false,
       },
       createdAt: {
         type: Sequelize.DATE,
@@ -51,8 +51,8 @@ module.exports = {
         defaultValue: NOW(),
       },
       cashforceAdm: {
-        type: Sequelize.TINYINT(1),
-        defaultValue: 0,
+        type: Sequelize.BOOLEAN,
+        defaultValue: false,
       },
     })
   },

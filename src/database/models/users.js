@@ -1,7 +1,7 @@
 const { NOW } = require("sequelize");
 
 module.exports = (sequelize, DataTypes) => {
-    const User = sequelize.define("users",
+    const User = sequelize.define("User",
     {
         id: {
           type: DataTypes.INTEGER,
@@ -52,8 +52,15 @@ module.exports = (sequelize, DataTypes) => {
           defaultValue: 0,
         },
       },
-    { timestamps: false }
+    { timestamps: true, tableName: 'users' }
     );
   
+    User.associate = (models) => {
+      User.hasMany(models.Order, {
+        foreignKey: 'userid', as: 'user',
+      })
+    }
+
+
     return User;
 };
