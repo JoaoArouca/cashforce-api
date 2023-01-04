@@ -1,5 +1,8 @@
-const UserRouter = require('express').Router();
+const { getAllUsers, getUserById } = require('../../http/controller/userController');
 
-UserRouter.get('/', (_req, res) => { res.send('deu bom')});
+const OrderRouter = require('express').Router();
 
-module.exports = UserRouter;
+OrderRouter.get('/', getAllUsers);
+OrderRouter.get('/:id', getUserById);
+
+module.exports = OrderRouter;
