@@ -1,0 +1,20 @@
+{
+  "name": "cashforce-api",
+  "version": "1.0.0",
+  "description": "- Run `npm run dev` in Backend directory to initialize the application with *nodemon*\r  - Run `npm start` in Backend directory to start the application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoaoArouca/cashforce-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoaoArouca/cashforce-api/issues"
+  },
+  "homepage": "https://github.com/JoaoArouca/cashforce-api#readme"
+}
