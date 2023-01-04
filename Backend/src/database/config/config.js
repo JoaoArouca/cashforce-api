@@ -4,14 +4,10 @@ const { Sequelize } = require("sequelize");
 const options = {
   host: process.env.DB_HOST,
   port: process.env.DB_PORT,
-  database: "Cashforce",
+  database: process.env.DB_DATA,
   username: process.env.DB_USER,
-  password: process.env.DB_PASS,
+  password: Number(process.env.DB_PASS),
   dialect: "mysql",
-  dialectOptions: {
-    timezone: "Z",
-    
-  }
 };
 
 const sequelize = new Sequelize(options.database, options.username, options.password, options);
