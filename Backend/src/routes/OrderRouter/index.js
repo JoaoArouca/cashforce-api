@@ -1,5 +1,7 @@
+const getAllOrders = require('../../http/controller/orderController');
+
 const OrderRouter = require('express').Router();
 
-OrderRouter.get('/', () => { console.log('deu bom') });
+OrderRouter.get('/', getAllOrders);
 
 module.exports = OrderRouter;

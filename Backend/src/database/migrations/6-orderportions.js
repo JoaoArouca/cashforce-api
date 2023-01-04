@@ -25,8 +25,8 @@ module.exports = {
         allowNull: false,
       },
       availableToMarket: {
-        type: Sequelize.TINYINT(1),
-        defaultValue: 1
+        type: Sequelize.BOOLEAN,
+        defaultValue: true
       },
       createdAt: {
         type: Sequelize.DATE,
