@@ -3,7 +3,6 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 async function main() {
-  // Cria os Cnpj
   const cnpj1 = {
     id: 1,
     cnpj: "00000000000001",
