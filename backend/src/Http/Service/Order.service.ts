@@ -16,8 +16,6 @@ export default class OrderService implements IOrderService {
       },
     });
 
-    console.log(orders);
-
     return orders;
   }
 

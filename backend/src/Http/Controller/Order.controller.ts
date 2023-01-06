@@ -1,10 +1,5 @@
 import { Request, Response } from "express";
-import {
-  Generic,
-  IOrder,
-  IOrderController,
-  IOrderService,
-} from "./../../Interface/index";
+import { IOrderController, IOrderService } from "./../../Interface/index";
 
 export default class OrderController implements IOrderController {
   private Service;
