@@ -17,7 +17,7 @@ export default class OrderController implements IOrderController {
 
       return res.status(200).json(orders);
     } catch (error) {
-      throw new Error("Method not implemented.");
+      return res.status(500).json(error);
     }
   }
 
@@ -31,7 +31,7 @@ export default class OrderController implements IOrderController {
 
       return res.status(200).json(order);
     } catch (error) {
-      throw new Error("Method not implemented.");
+      return res.status(500).json(error);
     }
   }
 }

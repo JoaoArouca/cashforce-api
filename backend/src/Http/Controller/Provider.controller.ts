@@ -17,7 +17,7 @@ export default class ProviderController implements IProviderController {
 
       return res.status(200).json(providers);
     } catch (error) {
-      throw new Error("Method not implemented.");
+      return res.status(500).json(error);
     }
   }
 
@@ -31,7 +31,7 @@ export default class ProviderController implements IProviderController {
 
       return res.status(200).json(provider);
     } catch (error) {
-      throw new Error("Method not implemented.");
+      return res.status(500).json(error);
     }
   }
 }

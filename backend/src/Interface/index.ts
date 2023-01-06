@@ -12,6 +12,10 @@ export interface IProviderService {
   getProviderById(id: Number): Promise<IProvider | Error>;
 }
 
+export interface IUserService {
+  getAllUsers(): Promise<IUser[]>;
+  getUserById(id: Number): Promise<IUser | Error>;
+}
 // export interface TypedResponse<ResBody> extends Express.Response {
 //   status: Send<ResBody, this>;
 //   json: Send<ResBody, this>;
@@ -40,6 +44,17 @@ export interface IProviderController {
     res: Response
   ): Promise<Response<any, Record<string, any>>>;
   getProviderById(
+    req: Request,
+    res: Response
+  ): Promise<Response<any, Record<string, any>>>;
+}
+
+export interface IUserController {
+  getAllUsers(
+    req: Request,
+    res: Response
+  ): Promise<Response<any, Record<string, any>>>;
+  getUserById(
     req: Request,
     res: Response
   ): Promise<Response<any, Record<string, any>>>;
@@ -93,4 +108,15 @@ export interface IProvider {
   createdAt: Date | String;
   updatedAt: Date | String;
   cnpjId: Number;
+}
+
+export interface IUser {
+  id: Number;
+  name: String;
+  email: String;
+  verificationCode: String | null;
+  emailChecked: Boolean;
+  createdAt: Date | String;
+  updatedAt: Date | String;
+  cashforceAdm: Boolean;
 }
