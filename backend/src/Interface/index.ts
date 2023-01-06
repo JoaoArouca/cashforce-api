@@ -1,9 +1,15 @@
 import { Request, Response } from "express";
 // import { Send } from "express-serve-static-core";
 
+// Services
 export interface IOrderService {
   getAllOrder(): Promise<IOrder[]>;
   getOrderById(id: Number): Promise<IOrder | Error>;
+}
+
+export interface IProviderService {
+  getAllProviders(): Promise<IProvider[]>;
+  getProviderById(id: Number): Promise<IProvider | Error>;
 }
 
 // export interface TypedResponse<ResBody> extends Express.Response {
@@ -16,12 +22,24 @@ export interface Generic<T, Z> {
   json: Z;
 }
 
+// Controllers
 export interface IOrderController {
   getAllOrders(
     req: Request,
     res: Response
   ): Promise<Response<any, Record<string, any>>>;
   getOrderById(
+    req: Request,
+    res: Response
+  ): Promise<Response<any, Record<string, any>>>;
+}
+
+export interface IProviderController {
+  getAllProviders(
+    req: Request,
+    res: Response
+  ): Promise<Response<any, Record<string, any>>>;
+  getProviderById(
     req: Request,
     res: Response
   ): Promise<Response<any, Record<string, any>>>;

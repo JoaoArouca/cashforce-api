@@ -8,5 +8,6 @@ const service = new OrderService();
 const Order = new OrderController(service);
 
 orderRouter.get("/", (req, res) => Order.getAllOrders(req, res));
+orderRouter.get("/:id", (req, res) => Order.getOrderById(req, res));
 
 export default orderRouter;
