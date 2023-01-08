@@ -1,14 +1,15 @@
 import React from 'react';
-import Header from './Components/Header/Header';
-import Sidebar from './Components/SideBar/SideBar';
+import { Route, Switch } from 'react-router-dom/cjs/react-router-dom.min';
+import Dashboard from './Components/Dashboard/Dashboard';
 
-function App() {
+function Routes() {
   return (
-    <main>
-      <Header />
-      <Sidebar />
-    </main>
+
+    <Switch>
+      <Route exact path="/" component={Dashboard} />
+    </Switch>
+
   );
 }
 
-export default App;
+export default Routes;

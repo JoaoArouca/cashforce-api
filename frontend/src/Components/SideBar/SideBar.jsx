@@ -1,34 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Nav } from 'react-bootstrap';
-import { withRouter } from 'react-router';
-// import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { ReactComponent as Hands } from '../../Images/Framehands.svg';
 import './SideBar.css';
 
-function Side() {
+function SideBar() {
+  const [selected, setSelected] = useState(null);
+
   return (
     <Nav
-      className="col-md-12 d-none d-md-block bg-light sidebar"
-      activeKey="/home"
-      onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
+      variant="pills"
+      className="flex-column sidebar"
     >
-      <div className="sidebar-sticky" />
-      <Nav.Item>
-        <Nav.Link href="/home">Active</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link eventKey="link-1">Link</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link eventKey="link-2">Link</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link eventKey="disabled" disabled>
-          Disabled
-        </Nav.Link>
-      </Nav.Item>
+      <Link
+        to="/"
+        onClick={() => setSelected(1)}
+        className={`navItemDefaultStyle ${selected === 1 && 'navItem'}`}
+      >
+        <Hands />
+        <span>Notas fiscais</span>
+      </Link>
+      {/* <NavItem
+        onClick={() => setSelected(2)}
+        style={NavItemStyle}
+        className={selected === 2 && 'navItem'}
+      >
+        Link 2
+      </NavItem>
+      <NavItem
+        style={NavItemStyle}
+        onClick={() => setSelected(3)}
+        className={selected === 3 && 'navItem'}
+      >
+        Link 3
+
+      </NavItem> */}
     </Nav>
   );
 }
 
-const Sidebar = withRouter(Side);
-export default Sidebar;
+export default SideBar;

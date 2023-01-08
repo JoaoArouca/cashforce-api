@@ -1,0 +1,12 @@
+.container {
+    display: flex;
+    /* justify-content: space-between; */
+    /* width: 100vh; */
+}
+/* section {
+    flex: 1;
+} */
+
+.divTable {
+    margin-left: 180px;
+}

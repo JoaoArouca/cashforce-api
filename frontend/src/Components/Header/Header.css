@@ -1,3 +1,6 @@
 header {
-    margin: 15px 0px 0px 10px
+    display: flex;
+    top: 0;
+    margin: 20px 0px 20px 30px;
+    background-color: #FBFDFE;
 }
