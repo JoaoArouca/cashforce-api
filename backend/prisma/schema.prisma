@@ -155,7 +155,7 @@ model orders {
   buyerId             Int
   provider            providers       @relation(fields: [providerId], references: [id])
   providerId          Int
-  orderStatusBuyer    String          @default("o")
+  orderStatusBuyer    String          @default("0")
   orderStatusProvider String          @default("0")
   deliveryReceipt     String?         @ignore
   cargoPackingList    String?         @ignore
@@ -193,4 +193,3 @@ model offers {
   sponsor               sponsors @relation(fields: [sponsorId], references: [id])
   sponsorId             Int
 }
-

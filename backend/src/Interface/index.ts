@@ -16,6 +16,11 @@ export interface IUserService {
   getAllUsers(): Promise<IUser[]>;
   getUserById(id: Number): Promise<IUser | Error>;
 }
+
+export interface ICnpjService {
+  getAllCnpj(): Promise<ICnpj[]>;
+  getCnpjById(id: Number): Promise<ICnpj | Error>;
+}
 // export interface TypedResponse<ResBody> extends Express.Response {
 //   status: Send<ResBody, this>;
 //   json: Send<ResBody, this>;
@@ -55,6 +60,17 @@ export interface IUserController {
     res: Response
   ): Promise<Response<any, Record<string, any>>>;
   getUserById(
+    req: Request,
+    res: Response
+  ): Promise<Response<any, Record<string, any>>>;
+}
+
+export interface ICnpjController {
+  getAllCnpj(
+    req: Request,
+    res: Response
+  ): Promise<Response<any, Record<string, any>>>;
+  getCnpjById(
     req: Request,
     res: Response
   ): Promise<Response<any, Record<string, any>>>;
