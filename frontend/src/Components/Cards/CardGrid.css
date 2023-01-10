@@ -1,0 +1,17 @@
+.btn-index {
+    width: 15%;
+}
+
+.nf-item {
+    margin-left: 0;
+    margin-right: 5px;
+}
+
+.card-index {
+    display: flex;
+    justify-content: space-around;
+    font-size: 8px;
+    color: #A1A8B8;
+    align-items: center;
+    overflow: hidden;
+}

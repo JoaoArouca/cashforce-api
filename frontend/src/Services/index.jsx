@@ -8,4 +8,10 @@ const get = async (route) => {
   return axios.get(url).then((result) => result.data);
 };
 
-export default get;
+const getById = async (route, id) => {
+  const url = `${BASE_URL}/${route}/${id}`;
+
+  return axios.get(url).then((result) => result.data);
+};
+
+export { get, getById };

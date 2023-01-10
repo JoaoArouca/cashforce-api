@@ -1,0 +1,23 @@
+.provider-btn {
+    height: 80%;
+    width: 20%;
+    float: left;
+    border: 0.5px solid #CAD3FF;
+    border-radius: 24px;
+    background-color: #ffff;
+    padding: 3px 8px 3px 8px;
+    font-size: 8px;
+    color: #727D94;
+}
+
+.provider-btn:hover {
+    background-color: #00AD8C;
+    color: #fff;
+    transition: 0.5s;
+    border: #00AD8C;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.layerCard {
+    flex-grow: 1;
+}

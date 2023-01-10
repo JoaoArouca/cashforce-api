@@ -1,0 +1,25 @@
+.card-info {
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid #DFE2EB;
+    border-radius: 6px;
+    font-size: 10px;
+    color: #4D5566;
+    overflow: hidden;
+    align-items: center;
+    margin-bottom: 5px;
+    padding: 0px 3px 0px 3px;
+}
+
+.card-item {
+    margin: 10px;
+}
+
+.status {
+    width: 20%;
+    text-align: center;
+}
+
+.colorStyle {
+    color: #00AD8C
+}
