@@ -32,6 +32,8 @@
 
 > Dentro da pasta *backend* rode os comandos:
  - `npm install` para instalar todas as dependências do projeto
+ - `npx prisma migrate dev` para criar as migrations com *Prisma*
+ - `npx prisma db seed` para popular o banco de dados com as Seeds
  - `npm start` para iniciar a aplicação na porta 3001
  - `npm run dev` para iniciar a aplicação usando o *nodemon*
 
